@@ -1,0 +1,11 @@
+<% content_for :title, "New class room" %>
+
+<h1>New class room</h1>
+
+<%= render "form", class_room: @class_room %>
+
+<br>
+
+<div>
+  <%= link_to "Back to class rooms", class_rooms_path %>
+</div>

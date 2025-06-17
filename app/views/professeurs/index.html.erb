@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Professeurs" %>
+
+<h1>Professeurs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom_professeur</th>
+      <th>Date_naissance</th>
+      <th>Numero_telephone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professeurs.each do |professeur| %>
+      <tr>
+        <td><%= professeur.nom_professeur %></td>
+        <td><%= professeur.date_naissance %></td>
+        <td><%= professeur.numero_telephone %></td>
+        <td><%= professeur.email %></td>
+        <td><%= link_to 'Show', professeur %></td>
+        <td><%= link_to 'Edit', edit_professeur_path(professeur) %></td>
+        <td><%= link_to 'Destroy', professeur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to "New professeur", new_professeur_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_evaluation: 2025-06-13
+  numero_eval: MyString
+  materiel: MyString
+  notes: MyString
+  professeur_id: MyString
+  student_id: MyString
+
+two:
+  date_evaluation: 2025-06-13
+  numero_eval: MyString
+  materiel: MyString
+  notes: MyString
+  professeur_id: MyString
+  student_id: MyString

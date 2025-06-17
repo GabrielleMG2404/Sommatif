@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Cours" %>
+
+<h1>Cours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>nom_cours</th>
+      <th>professeur_id</th>
+      <th>class_room_id</th>
+      <th>Time</th>
+      <th>Program_cours</th>
+      <th>student_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cours.each do |cour| %>
+      <tr>
+        <td><%= cour.nom_cours %></td>
+        <td><%= cour.professeur_id %></td>
+        <td><%= cour.class_room_id %></td>
+        <td><%= cour.Time %></td>
+        <td><%= cour.Programm_cours %></td>
+        <td><%= cour.student_id %></td>
+        <td><%= link_to 'Show', cour %></td>
+        <td><%= link_to 'Edit', edit_cour_path(cour) %></td>
+        <td><%= link_to 'Destroy', cour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New cour", new_cour_path %>

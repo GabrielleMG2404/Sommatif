@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Students" %>
+
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom_student</th>
+      <th>Date_naissance</th>
+      <th>Numero_telephone</th>
+      <th>Email</th>
+      <th>Grade</th>
+      <th>Numero_parents</th>
+      <th>Cours_id</th>
+      <th>Professeur_id</th>
+      <th>Class_room_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.nom_student %></td>
+        <td><%= student.date_naissance %></td>
+        <td><%= student.numero_telephone %></td>
+        <td><%= student.email %></td>
+        <td><%= student.grade %></td>
+        <td><%= student.numero_parents %></td>
+        <td><%= student.cours_id %></td>
+        <td><%= student.professeur_id %></td>
+        <td><%= student.class_room_id %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New student", new_student_path %>

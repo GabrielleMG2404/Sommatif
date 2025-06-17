@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Tache" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+     <p>
+  <td>
+    <% if params[:controller] == "class_rooms" %>
+    <%= link_to 'Class_rooms', class_rooms_path, class:"active"%>
+    <%else %>
+    <%= link_to 'Class_rooms', class_rooms_path, class:""%>
+    <% end%>
+  </td>
+  <td>
+    <%if params[:controller] == "cours" %>
+      <%= link_to 'Cours', cours_path, class:"active"%>
+        <%else%>
+      <%= link_to 'Cours',cours_path, class:""%>
+    <%end%>
+  </td>
+  <td>
+    <%if params[:controller] == "evaluations" %>
+      <%= link_to 'Evaluations', evaluations_path, class:"active"%>
+        <%else%>
+      <%= link_to 'Evaluations', evaluations_path, class:""%>
+    <%end%>
+  </td>
+  <td>
+    <% if params[:controller] == "inscriptions" %>
+        <%= link_to 'Inscriptions', inscriptions_path, class:"active"%>
+      <%else%>
+        <%= link_to 'Inscriptions', inscriptions_path, class:""%>
+    <%end%>
+  </td>
+  <td>
+    <% if params[:controller] == "professeurs" %>
+      <%= link_to 'Professeurs', professeurs_path, class:"active"%>
+        <%else%>
+      <%= link_to 'Professeurs', professeurs_path, class:""%>
+    <%end%>
+  </td>
+  <td>
+    <% if params[:controller] == "students" %>
+       <%= link_to 'Students', students_path, class:"active"%>
+      <%else%>
+       <%= link_to 'Students', students_path, class:""%>
+    <%end%>
+  </td>
+</p>
+    <%= yield %>
+  </body>
+</html>

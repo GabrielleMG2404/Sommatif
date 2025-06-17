@@ -1,0 +1,11 @@
+<% content_for :title, "New inscription" %>
+
+<h1>New inscription</h1>
+
+<%= render "form", inscription: @inscription %>
+
+<br>
+
+<div>
+  <%= link_to "Back to inscriptions", inscriptions_path %>
+</div>
